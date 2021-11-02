@@ -1,0 +1,28 @@
+table {
+    margin-top: 10%;
+    margin-left: 10%;
+    border-collapse: collapse;
+    width: 80%;
+    font-size: 48px;
+  }
+  
+  td, th {
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #F4F4F4;
+  }
+
+  td:nth-child(1), th:nth-child(1) {
+    text-align: left;
+  }
+
+  td:nth-child(2), th:nth-child(2) {
+    text-align: right;
+  }
+
+  thead {
+    background-color: #F4F4F4;
+    font-weight: bold;
+  }
