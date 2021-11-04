@@ -1,4 +1,8 @@
-document.addEventListener("deviceready", onDeviceReady, false);
+// document.addEventListener("deviceready", onDeviceReady, false);
+
+$(document).ready(function() {
+  onDeviceReady()
+})
 
 function onDeviceReady() {
   startup()

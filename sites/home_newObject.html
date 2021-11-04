@@ -1,20 +1,81 @@
-<form action="" id="form">
-    <input type="text" placeholder="Name" name="objectName" id="objectName" class="formInputField">
-    <input type="number" placeholder="Bewertung" name="objectBewertung" id="objectBewertung" class="formInputField">
-    <textarea placeholder="Beschreibung" name="objectBeschreibung" id="objectBeschreibung" cols="30" rows="10" class="formTextfield"></textarea>
-    <input type="file" value="" placeholder="Bild vom Film / Serie" name="objectFile" id="objectFile" class="formInputFile">
-
-    <!-- <button name="objectFile" id="objectFile" class="formInputFile"><span class='material-icons'>photo_camera</span> Wähle ein Bild</button>
-    <input type='file' id="getFile" style="display:none"> -->
-    <!-- <button onclick="document.getElementById('getFile').click()" id="formChoosFileBtn"><span class='material-icons'>photo_camera</span> Wähle ein Bild</button> -->
-
-    <div id="fromSideBySide">
-        <input type="button" value="movie" name="objectTypeMovie" id="objectTypeMovie" class="formTypeButton">
-        <input type="button" value="serie" name="objectTypeSeries" id="objectTypeSeries" class="formTypeButton">
+<div class="row">
+  <div class="col s12">
+    <div class="col s6">
+      <input
+        type="text"
+        placeholder="Name"
+        name="objectName"
+        id="objectName"
+        class="formInputField"
+      />
     </div>
-    <div class="submitBtnContainer">
-        <button type="submit" name="objectSubmit" id="objectSubmit" class="formSubmitButton"><span class="material-icons">save</span></button>
+    <div class="col s6">
+      <input
+        type="number"
+        placeholder="Bewertung"
+        name="objectBewertung"
+        id="objectBewertung"
+        class="formInputField"
+      />
     </div>
-</form>
-
-<!-- id="formChoosFileBtn"  -->
+  </div>
+  <div class="col s12">
+    <textarea
+      placeholder="Beschreibung"
+      name="objectBeschreibung"
+      id="objectBeschreibung"
+      cols="30"
+      rows="10"
+      class="formTextfield materialize-textarea"
+    ></textarea>
+  </div>
+  <div class="col s12">
+    <!-- <input
+      type="file"
+      value=""
+      placeholder="Bild vom Film / Serie"
+      name="objectFile"
+      id="objectFile"
+      class="formInputFile"
+    /> -->
+    <div class="file-field input-field">
+      <div class="btn">
+        <span>File</span>
+        <input type="file" />
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text" />
+      </div>
+    </div>
+  </div>
+  <div class="col s12">
+    <div class="col s6">
+      <input
+        type="button"
+        value="movie"
+        name="objectTypeMovie"
+        id="objectTypeMovie"
+        class="formTypeButton waves-effect waves-light btn"
+      />
+    </div>
+    <div class="col s6">
+      <input
+        type="button"
+        value="serie"
+        name="objectTypeSeries"
+        id="objectTypeSeries"
+        class="formTypeButton waves-effect waves-light btn"
+      />
+    </div>
+  </div>
+  <div class="col s12">
+    <button
+      type="submit"
+      name="objectSubmit"
+      id="objectSubmit"
+      class="formSubmitButton waves-effect waves-light btn"
+    >
+      <span class="material-icons">save</span>
+    </button>
+  </div>
+</div>

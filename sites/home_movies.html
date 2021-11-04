@@ -1,23 +1,24 @@
 <div id="movieData"></div>
-    <script id="template" type="x-tmpl-mustache">
-        <table>
-            <thead>
-              <tr>
-                  <th>Name</th>
-                  <th>Bewertung</th>
-              </tr>
-            </thead>
-            
-            <tbody>
-            {{#Media}}
-            {{#.}}
-              <tr class="movieRow" id="movieRow{{Id}}" value="{{Id}}">
-                <td>{{Name}}</td>
-                <td>{{Bewertung}}</td>
-              </tr>
-            {{/.}}
-            {{/Media}}
-            </tbody>
-          </table>
+<script id="template" type="x-tmpl-mustache">
+  <table>
+      <thead>
+        <tr>
+            <th>Name</th>
+            <th>Bewertung</th>
+        </tr>
+      </thead>
 
-    </script>
+      <tbody>
+      {{#Media}}
+      {{#.}}
+        <tr class="movieRow" id="movieRow{{Id}}" value="{{Id}}" data-id="{{Id}}">
+          <td>{{Name}}</td>
+          <td>{{Bewertung}}</td>
+        </tr>
+      {{/.}}
+      {{/Media}}
+      </tbody>
+    </table>
+</script>
+
+<!-- <div class="testSwipContainer">asdfasdfasdf</div> -->
