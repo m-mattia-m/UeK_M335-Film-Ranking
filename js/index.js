@@ -1,14 +1,8 @@
 // document.addEventListener("deviceready", onDeviceReady, false);
 
-<<<<<<< Updated upstream
 $(document).ready(function() {
   onDeviceReady()
 })
-=======
-$( document ).ready(function() {
-  onDeviceReady()
-});
->>>>>>> Stashed changes
 
 function onDeviceReady() {
   startup()
