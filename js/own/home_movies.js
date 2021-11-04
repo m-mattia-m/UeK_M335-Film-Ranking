@@ -1,19 +1,7 @@
+firstLoadMovieViewSite = 0;
+
 console.log("Document Ready");
 ("use strict");
-$.ajaxSetup({
-  async: false
-});
-var config = {
-  apiKey: "AIzaSyCKzSy6Ac6TLzSYWVerRnN2cO9sSfMxpnI",
-  authDomain: "uek335-ee3c5.firebaseapp.com",
-  databaseURL: "https://uek335-ee3c5-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "uek335-ee3c5",
-  storageBucket: "uek335-ee3c5.appspot.com",
-  messagingSenderId: "299268752022",
-  appId: "1:299268752022:web:d23e73053ae8be0dc9b8b7",
-  measurementId: "G-BTKB2C3ZE7",
-};
-firebase.initializeApp(config);
 showData();
 
 function showData() {
@@ -34,23 +22,49 @@ function showData() {
       array = array[0];
       var html = Mustache.render(template, array);
       $("#movieData").html(html);
+      $(".movieRow").swipeleft(function () {
+        console.log("swipeleft works");
+        console.log(array)
+        deleteDaten($(this).attr("data-id"))
+      });
+      $(".movieRow").click(function(){openMovie($(this).attr("data-id"))})
     },
     function (error) {
       console.log("Error: " + error.message);
     },
 
-    $(".movieRow").swipeleft(function () {
-      // console.log($(this).value())
-      console.log("swipe works");
-      alert("swipe works");
-    }),
-
-
-    // $(".testSwipContainer").swipeleft(function () {
-    //   // console.log($(this).value())
-    //   console.log("swipe works");
-    //   alert("swipe works");
-    // })
   );
 
+}
+
+// Zu bearbeiten
+
+function deleteDaten(id) {
+  // $('#info').html('deleteDaten');
+  // Löschen 
+  firebase.database().ref("Media/" + id + "/").remove();
+}
+
+function updateDaten(id) {
+  // $('#info').html('updateDaten');
+  firebase.database().ref("Media/" + id + "/").set({
+      id: parseInt(id) + 1,
+      
+  });
+}
+
+function openMovie(id) {
+
+  if (firstLoadMovieViewSite == 0) {
+    console.log("first load movieView")
+    $('movieView').load("sites/home_movieView.html", function () {});
+    firstLoadMovieViewSite = 1;
+  }
+
+  console.log("click on " + id)
+
+  $("#movieSite").hide()
+  $("#homeSite").hide()
+  $("#serieSite").hide()
+  $("#movieView").show()
 }

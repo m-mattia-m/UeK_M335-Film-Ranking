@@ -6,6 +6,7 @@ $("#movieSiteBtn").click(function(){
     $("#movieSite").show()
     $("#homeSite").hide()
     $("#serieSite").hide()
+    $("#movieView").hide()
     setTitel("Filme")
 
     if (firstLoadMovieSite == 0) {
@@ -21,6 +22,7 @@ $("#homeSiteBtn").click(function(){
     $("#movieSite").hide()
     $("#homeSite").show()
     $("#serieSite").hide()
+    $("#movieView").hide()
     setTitel("Neuer Film / Neue Serie")
 
     if (firstLoadHomeSite == 0) {
@@ -34,6 +36,7 @@ $("#serieSiteBtn").click(function(){
     $("#movieSite").hide()
     $("#homeSite").hide()
     $("#serieSite").show()
+    $("#movieView").hide()
     setTitel("Serien")
 
     if (firstLoadSerieSite == 0) {
